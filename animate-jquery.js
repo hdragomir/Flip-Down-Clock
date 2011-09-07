@@ -11,12 +11,12 @@ simple jQuery Port made by team Odeon. http://od-eon.com
         "m2": -1,
         "s1": -1,
         "s2": -1
-    }
+    };
     
     var paths = {
         "singles": 'Single',
         "doubles": 'Double'
-    }
+    };
     
     
     function flip(upperId, lowerId, changeNumber, pathUpper, pathLower){
@@ -26,10 +26,10 @@ simple jQuery Port made by team Odeon. http://od-eon.com
             .height("64px")
             .css({"visibility": "visible", 'display': 'inline-block' });
         
-        $(upperBackId).attr('src', pathUpper + parseInt(changeNumber) + ".png");
+        $(upperBackId).attr('src', pathUpper + parseInt(changeNumber, 10) + ".png");
         
         $(lowerId)
-            .attr('src', pathLower + parseInt(changeNumber) + ".png")
+            .attr('src', pathLower + parseInt(changeNumber, 10) + ".png")
             .height('0px')
             .css({"visibility": "visible", 'display': 'inline-block'});
         
@@ -38,8 +38,8 @@ simple jQuery Port made by team Odeon. http://od-eon.com
                 $(lowerId + "Back").attr('src', $(lowerId).attr('src') );
                 $(lowerId).add(upperId).css({"visibility": "hidden",
                                              "display": 'inline-block' }).height('0');
-            } } )
-        } })
+            } } );
+        } });
     }
 
     
@@ -91,10 +91,10 @@ simple jQuery Port made by team Odeon. http://od-eon.com
 
     function retroClock(){
         tick();
-        setInterval('tick()', 1000);
+        setInterval(tick, 1000);
     }
     
 
     $(function(){
         retroClock();
-    })
+    });
